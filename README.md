@@ -2,4 +2,4 @@
 
 This is my first foray into javascript. 
 
-The goal is to write a progamme IOT to play rock paper sicssors entirely within the broswer window. 
+The goal is to write a program IOT to play rock paper scissors entirely within the browser window.
