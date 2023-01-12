@@ -27,3 +27,37 @@ function getPlayerChoice() {
     }
     return playerChoice
 }
+
+function playRound () {
+
+let playerChoice = getPlayerChoice()
+
+let computerChoice = getComputerChoice()
+
+
+    console.log('Computer = ' + computerChoice + ' player = '+ playerChoice)
+
+if (playerChoice === computerChoice) {
+    alert("Tie Game")
+}
+else if (playerChoice == 'rock' && computerChoice == 'paper') {
+    alert('computer picked paper, You win the round')
+}
+else if (playerChoice == 'rock' && computerChoice == 'scissors') {
+    alert('computer picked scissors, You lose the round')
+}
+else if (playerChoice == 'paper' && computerChoice == 'rock') {
+    alert('computer picked rock, You lose the round')
+}
+else if (playerChoice == 'paper' && computerChoice == 'scissors') {
+    alert('computer picked scissors paper, You lose the round')
+}
+else if(playerChoice == 'scissors' && computerChoice == 'paper') {
+    alert('computer picked paper, You win the round')
+}
+else if(playerChoice == 'scissors' && computerChoice == 'rock') 
+    alert('computer picked scissors, You lose the round')
+}
+
+
+playRound ()
