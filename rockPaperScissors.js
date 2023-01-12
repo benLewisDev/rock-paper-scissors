@@ -1,7 +1,8 @@
 
-let choices = ['rock','paper','scissors']
+
 
 function getComputerChoice() {
+let choices = ['rock','paper','scissors']
 let computerRoll = Math.floor(Math.random() * 3)
 let computerChoice
 switch(computerRoll) {
@@ -26,5 +27,3 @@ function getPlayerChoice() {
     }
     return playerChoice
 }
-
-console.log(getPlayerChoice())
