@@ -30,7 +30,7 @@ function getPlayerChoice() {
 
 function playGame () {
 
-let playerChoice =  getPlayerChoice()
+let playerChoice =  'rock'//getPlayerChoice()
 let computerChoice =  getComputerChoice()
 
 
@@ -38,7 +38,6 @@ console.log('Computer = ' + computerChoice + ', player = '+ playerChoice)
 
 if (playerChoice === computerChoice) {
     alert("Tie Game")
-    return tie++
 }
 else if (playerChoice == 'paper' && computerChoice == 'rock'||
          playerChoice == 'scissors' && computerChoice == 'paper' ||
@@ -60,36 +59,31 @@ else if (playerChoice == 'rock' && computerChoice == 'paper'||
 }
 
 
-let computerScore = 0
-let playerScore = 0
-let tie = 0
+let computerScore = 0;
+let playerScore = 0;
 
-function playRound() {
+function playRound(numOfRounds) {
 
-    let rounds = 0
+    let rounds = 0;
 
-
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i <= numOfRounds; i++) {
+        if (playerScore === computerScore) i--;
+        rounds ++
         playGame()
-        rounds++
-        if (playerScore == 3 || computerScore == 3) i = 5;
-        console.log('Player score = '+playerScore+' Computer score = '+computerScore + ' rounds = ' + rounds)
+        console.log('Player score = '+playerScore+' Computer score = '+computerScore + ' rounds = ' + rounds);
+        if (playerScore >= numOfRounds / 2 || computerScore >= numOfRounds / 2) i = numOfRounds;
     }
-
-    // while(playerScore < 3 && computerScore < 3) {
-    //     playGame()
-    //     rounds++
-    //     console.log('Player score = '+playerScore+' Computer score = '+computerScore + ' rounds = ' + rounds)
-    // }
 
     if (playerScore > computerScore) {
-        alert('You win!!!')
+        alert('You win best of '+ numOfRounds)
+        console.log('player win best of ' + numOfRounds )
     }
     else if(computerScore > playerScore) {
-        alert('You Lose :(')
+        alert('You Lose the best of ' + numOfRounds)
+        console.log('computer wins best of '+numOfRounds)
     }
 
 }
 
 
-playRound()
+playRound(5)
