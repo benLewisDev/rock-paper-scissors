@@ -1,4 +1,9 @@
 
+let computerScore = 1;
+let playerScore = 1;
+playRound(5)
+
+
 function getComputerChoice() {
 let choices = ['rock','paper','scissors']
 let computerRoll = Math.floor(Math.random() * 3)
@@ -33,7 +38,6 @@ function playGame () {
 let playerChoice =  'rock'//getPlayerChoice()
 let computerChoice =  getComputerChoice()
 
-
 console.log('Computer = ' + computerChoice + ', player = '+ playerChoice)
 
 if (playerChoice === computerChoice) {
@@ -55,23 +59,20 @@ else if (playerChoice == 'rock' && computerChoice == 'paper'||
     alert('You lose the round')
     return computerScore++;
 }
-
 }
-
-
-let computerScore = 0;
-let playerScore = 0;
 
 function playRound(numOfRounds) {
 
     let rounds = 0;
 
-    for (let i = 0; i <= numOfRounds; i++) {
-        if (playerScore === computerScore) i--;
-        rounds ++
+    for (let i = 4; i < numOfRounds; i++) {
         playGame()
+        console.log('counter = ' + i)
+        if (playerScore == computerScore && i == numOfRounds - 1) i--;
+        rounds ++
         console.log('Player score = '+playerScore+' Computer score = '+computerScore + ' rounds = ' + rounds);
-        if (playerScore >= numOfRounds / 2 || computerScore >= numOfRounds / 2) i = numOfRounds;
+        //if (playerScore >= numOfRounds / 2 || computerScore >= numOfRounds / 2) i = numOfRounds;
+        console.log('counter = ' + i);
     }
 
     if (playerScore > computerScore) {
@@ -82,8 +83,5 @@ function playRound(numOfRounds) {
         alert('You Lose the best of ' + numOfRounds)
         console.log('computer wins best of '+numOfRounds)
     }
-
 }
 
-
-playRound(5)
