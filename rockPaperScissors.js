@@ -1,6 +1,6 @@
 
-let computerScore = 1;
-let playerScore = 1;
+let computerScore = 0;
+let playerScore = 0;
 playRound(5)
 
 
@@ -76,7 +76,7 @@ function playRound(numOfRounds) {
     //to win before the rounds are complete
         if (playerScore == computerScore && i == numOfRounds - 1) i--;
         if (playerScore >= numOfRounds / 2 ||
-            computerScore >= numOfRounds / 2) i = numOfRounds;
+            computerScore >= numOfRounds / 2) break;
     }
 
     if (playerScore > computerScore) {
