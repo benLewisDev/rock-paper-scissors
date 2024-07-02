@@ -1,5 +1,5 @@
-let humanSelection = getHumanChoice();
-let compSelection = getComputerChoice();
+let humanScore = 0;
+let compScore = 0;
 
 function getComputerChoice() {
   let compChoice = Math.random();
@@ -34,9 +34,6 @@ function playRound(compChoice, humanChoice) {
   let humanWon = "You Won!";
   let humanLost = "You lost! Better luck next time";
 
-  let humanScore = 0;
-  let compScore = 0;
-
   if (compChoice === humanChoice) {
     alert("its a tie");
   } else if (compChoice === "scissors" && humanChoice === "paper") {
@@ -60,10 +57,28 @@ function playRound(compChoice, humanChoice) {
   }
 }
 
-playRound(compSelection, humanSelection);
+function playGame(rounds) {
+  for (i = 1; i <= rounds; i++) {
+    console.log("round " + i);
+    playRound(getComputerChoice(), getHumanChoice());
+    console.log("human score = " + humanScore);
+    console.log("Computer score = " + compScore);
+  }
 
-// function get human choice
-// hint: use math.random
+  while (true) {
+    if (humanScore == compScore) {
+      playRound(getComputerChoice(), getHumanChoice());
+      console.log("Bonus Round");
+      console.log("human score = " + humanScore);
+      console.log("Computer score = " + compScore);
+    } else if (humanScore > compScore) {
+      alert("You Win the Game!");
+      break;
+    } else if (humanScore < compScore) {
+      alert("You Lose the Game");
+      break;
+    }
+  }
+}
 
-// main function
-// -evaluate winner
+playGame(5);
