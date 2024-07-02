@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 75vh;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+}
