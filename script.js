@@ -31,37 +31,36 @@ function getHumanChoice() {
 }
 
 function playRound(compChoice, humanChoice) {
-let humanWon = 'You Won!'
-let humanLost = 'You lost! Better luck next time'
+  let humanWon = "You Won!";
+  let humanLost = "You lost! Better luck next time";
 
-let humanScore = 0;
-let compScore = 0;
+  let humanScore = 0;
+  let compScore = 0;
 
   if (compChoice === humanChoice) {
     alert("its a tie");
   } else if (compChoice === "scissors" && humanChoice === "paper") {
     alert(humanLost);
-    compScore++
+    compScore++;
   } else if (compChoice === "paper" && humanChoice === "rock") {
     alert(humanLost);
-    compScore++
+    compScore++;
   } else if (compChoice === "rock" && humanChoice === "scissors") {
     alert(humanLost);
-    compScore++
-  }  else if (compChoice === "scissors" && humanChoice === "rock") {
+    compScore++;
+  } else if (compChoice === "scissors" && humanChoice === "rock") {
     alert(humanWon);
-    humanScore++
+    humanScore++;
   } else if (compChoice === "paper" && humanChoice === "scissors") {
     alert(humanWon);
-    humanScore++
+    humanScore++;
   } else if (compChoice === "rock" && humanChoice === "scissors") {
     alert(humanWon);
-    humanScore++
+    humanScore++;
   }
 }
 
-
-playRound(compSelection, humanSelection)
+playRound(compSelection, humanSelection);
 
 // function get human choice
 // hint: use math.random
